@@ -50,10 +50,9 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate</groupId>
+			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-spatial</artifactId>
-			<version>7.1.7.Final</version>
-			<type>pom</type>
+			<version>6.5.2.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.modelmapper</groupId>

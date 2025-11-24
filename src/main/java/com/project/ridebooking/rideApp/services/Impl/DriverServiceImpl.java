@@ -6,8 +6,10 @@ import com.project.ridebooking.rideApp.entities.Driver;
 import com.project.ridebooking.rideApp.entities.Ride;
 import com.project.ridebooking.rideApp.entities.RideRequest;
 import com.project.ridebooking.rideApp.entities.enums.RideRequestStatus;
+import com.project.ridebooking.rideApp.entities.enums.RideStatus;
 import com.project.ridebooking.rideApp.exceptions.ResourceNotFoundException;
 import com.project.ridebooking.rideApp.repositories.DriverRepository;
+import com.project.ridebooking.rideApp.repositories.RideRepository;
 import com.project.ridebooking.rideApp.services.DriverService;
 import com.project.ridebooking.rideApp.services.RideRequestService;
 import com.project.ridebooking.rideApp.services.RideService;
@@ -16,6 +18,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -26,6 +29,7 @@ public class DriverServiceImpl implements DriverService {
     private final DriverRepository driverRepository;
     private final RideService rideService;
     private final ModelMapper modelMapper;
+    private final RideRepository rideRepository;
 
     @Override
     @Transactional
@@ -39,15 +43,32 @@ public class DriverServiceImpl implements DriverService {
         if(!driver.getAvailable()){
             throw new RuntimeException("Driver not available");
         }
-
-        Ride ride = rideService.createNewRide(rideRequest,driver);
+        driver.setAvailable(false);
+        Driver savedDriver = driverRepository.save(driver);
+        Ride ride = rideService.createNewRide(rideRequest,savedDriver);
 
         return modelMapper.map(ride, RideDto.class);
     }
 
     @Override
-    public RideDto startRide(Long rideId) {
-        return null;
+    public RideDto startRide(Long rideId, String otp) {
+        Ride ride = rideService.getRideById(rideId);
+        Driver driver = getCurrentDriver();
+        if(!driver.equals(ride.getDriver())){
+            throw new RuntimeException("Driver cant start this ride, as it was not accepted earlier!");
+        }
+
+        if(!ride.getRideStatus().equals(RideStatus.CONFIRMED)){
+            throw new RuntimeException("Ride status is not confirmed, hence cannot be started!");
+        }
+
+        if(!ride.getOtp().equals(otp)){
+            throw new RuntimeException("OTP is invalid!");
+        }
+        ride.setStartedAt(LocalDateTime.now());
+        Ride savedRide = rideService.updateRideStatus(ride, RideStatus.ONGOING);
+
+        return modelMapper.map(savedRide, RideDto.class);
     }
 
     @Override

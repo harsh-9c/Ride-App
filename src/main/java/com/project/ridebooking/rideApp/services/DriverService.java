@@ -9,7 +9,7 @@ import java.util.List;
 public interface DriverService {
 
     RideDto acceptRide(Long rideRequestId);
-    RideDto startRide( Long rideId);
+    RideDto startRide( Long rideId, String otp);
     RideDto cancelRide( Long rideId);
     RideDto endRide( Long rideId);
     RideDto rateDriver( Long rideId, Integer rating);

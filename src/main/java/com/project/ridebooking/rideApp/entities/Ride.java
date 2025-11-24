@@ -4,12 +4,16 @@ import com.project.ridebooking.rideApp.entities.enums.PaymentMethod;
 import com.project.ridebooking.rideApp.entities.enums.RideRequestStatus;
 import com.project.ridebooking.rideApp.entities.enums.RideStatus;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.locationtech.jts.geom.Point;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 public class Ride {
 
     @Id
@@ -38,6 +42,8 @@ public class Ride {
     private RideStatus rideStatus;
 
     private  Double fare;
+
+    private String otp;
 
     private LocalDateTime startedAt;
 

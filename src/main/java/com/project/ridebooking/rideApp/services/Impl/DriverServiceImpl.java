@@ -3,6 +3,7 @@ package com.project.ridebooking.rideApp.services.Impl;
 import com.project.ridebooking.rideApp.dto.DriverDto;
 import com.project.ridebooking.rideApp.dto.RideDto;
 import com.project.ridebooking.rideApp.entities.Driver;
+import com.project.ridebooking.rideApp.entities.Payment;
 import com.project.ridebooking.rideApp.entities.Ride;
 import com.project.ridebooking.rideApp.entities.RideRequest;
 import com.project.ridebooking.rideApp.entities.enums.RideRequestStatus;
@@ -11,6 +12,7 @@ import com.project.ridebooking.rideApp.exceptions.ResourceNotFoundException;
 import com.project.ridebooking.rideApp.repositories.DriverRepository;
 import com.project.ridebooking.rideApp.repositories.RideRepository;
 import com.project.ridebooking.rideApp.services.DriverService;
+import com.project.ridebooking.rideApp.services.PaymentService;
 import com.project.ridebooking.rideApp.services.RideRequestService;
 import com.project.ridebooking.rideApp.services.RideService;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +33,7 @@ public class DriverServiceImpl implements DriverService {
     private final DriverRepository driverRepository;
     private final RideService rideService;
     private final ModelMapper modelMapper;
-    private final RideRepository rideRepository;
+    private final PaymentService paymentService;
 
     @Override
     @Transactional
@@ -70,6 +72,8 @@ public class DriverServiceImpl implements DriverService {
         ride.setStartedAt(LocalDateTime.now());
         Ride savedRide = rideService.updateRideStatus(ride, RideStatus.ONGOING);
 
+        paymentService.createNewPayment(savedRide);
+
         return modelMapper.map(savedRide, RideDto.class);
     }
 
@@ -90,8 +94,24 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
+    @Transactional
     public RideDto endRide(Long rideId) {
-        return null;
+        Ride ride = rideService.getRideById(rideId);
+        Driver driver = getCurrentDriver();
+
+        if(!driver.equals(ride.getDriver())){
+            throw new RuntimeException("Driver cant start this ride, as it was not accepted earlier!");
+        }
+
+        if(!ride.getRideStatus().equals(RideStatus.ONGOING)){
+            throw new RuntimeException("Ride status is not ongoing, hence cannot be ended!");
+        }
+        ride.setEndedAt(LocalDateTime.now());
+        Ride savedRide = rideService.updateRideStatus(ride,RideStatus.ENDED);
+        updateDriverAvailability(driver, true);
+
+        paymentService.processPayment(ride);
+        return modelMapper.map(savedRide, RideDto.class);
     }
 
     @Override

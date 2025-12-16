@@ -3,11 +3,17 @@ package com.project.ridebooking.rideApp.entities;
 import com.project.ridebooking.rideApp.entities.enums.PaymentMethod;
 import com.project.ridebooking.rideApp.entities.enums.PaymentStatus;
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +24,8 @@ public class Payment {
 
     @OneToOne(fetch = FetchType.LAZY)
     private Ride ride;
+
+    private Double amount;
 
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;

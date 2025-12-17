@@ -11,6 +11,7 @@ import com.project.ridebooking.rideApp.exceptions.ResourceNotFoundException;
 import com.project.ridebooking.rideApp.repositories.RideRequestRepository;
 import com.project.ridebooking.rideApp.repositories.RiderRepository;
 import com.project.ridebooking.rideApp.services.DriverService;
+import com.project.ridebooking.rideApp.services.RatingService;
 import com.project.ridebooking.rideApp.services.RideService;
 import com.project.ridebooking.rideApp.services.RiderService;
 import com.project.ridebooking.rideApp.strategies.DriverMatchingStrategy;
@@ -38,6 +39,7 @@ public class RiderServiceImpl implements RiderService {
     private final RiderRepository riderRepository;
     private final RideService rideService;
     private final DriverService driverService;
+    private final RatingService ratingService;
 
     @Override
     @Transactional
@@ -79,8 +81,17 @@ public class RiderServiceImpl implements RiderService {
     }
 
     @Override
-    public RideDto rateDriver(Long rideId, Integer rating) {
-        return null;
+    public DriverDto rateDriver(Long rideId, Integer rating) {
+        Ride ride = rideService.getRideById(rideId);
+        Rider rider = getCurrentRider();
+
+        if(!rider.equals(ride.getRider())){
+            throw new RuntimeException("Rider is not owner of this ride!");
+        }
+        if(!ride.getRideStatus().equals(RideStatus.ENDED)){
+            throw new RuntimeException("Ride status is not ended hence cannot start rating. Current status: "+ride.getRideStatus());
+        }
+        return ratingService.rateDriver(ride, rating);
     }
 
     @Override

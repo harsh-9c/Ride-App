@@ -1,15 +1,20 @@
 package com.project.ridebooking.rideApp.repositories;
 
 import com.project.ridebooking.rideApp.entities.Driver;
+import com.project.ridebooking.rideApp.entities.Rider;
+import com.project.ridebooking.rideApp.entities.User;
 import org.locationtech.jts.geom.Point;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 //ST_Distance(point1, point2)
 //ST_DWithin(point1, 10000)
 
+@Repository
 public interface DriverRepository extends JpaRepository<Driver, Long> {
     @Query(value = "SELECT d.*, ST_Distance(d.current_location, :pickupLocation) AS distance " +
             "FROM driver d " +
@@ -26,4 +31,5 @@ public interface DriverRepository extends JpaRepository<Driver, Long> {
     "LIMIT 10", nativeQuery = true)
     List<Driver> findTenNearbyTopRatedDrivers(Point pickupLocation);
 
+    Optional<Driver> findByUser(User user);
 }

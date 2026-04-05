@@ -1,0 +1,70 @@
+05-04-2026 09:42:02.119 [background-preinit] [-] INFO  rideApp-o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 8.0.3.Final
+05-04-2026 09:42:02.144 [main] [-] INFO  rideApp-c.p.r.rideApp.RideAppApplication.logStarting - Starting RideAppApplication using Java 24 with PID 7371 (/Users/harshjangitwar/Desktop/Spring Boot 1 to 100/rideApp/target/classes started by harshjangitwar in /Users/harshjangitwar/Desktop/Spring Boot 1 to 100/rideApp)
+05-04-2026 09:42:02.145 [main] [-] INFO  rideApp-c.p.r.rideApp.RideAppApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+05-04-2026 09:42:03.061 [main] [-] INFO  rideApp-o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected - Multiple Spring Data modules found, entering strict repository configuration mode
+05-04-2026 09:42:03.062 [main] [-] INFO  rideApp-o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-04-2026 09:42:03.198 [main] [-] INFO  rideApp-o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 124 ms. Found 9 JPA repository interfaces.
+05-04-2026 09:42:03.662 [main] [-] INFO  rideApp-o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+05-04-2026 09:42:03.670 [main] [-] INFO  rideApp-o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+05-04-2026 09:42:03.671 [main] [-] INFO  rideApp-o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+05-04-2026 09:42:03.671 [main] [-] INFO  rideApp-o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.48]
+05-04-2026 09:42:03.696 [main] [-] INFO  rideApp-o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+05-04-2026 09:42:03.697 [main] [-] INFO  rideApp-o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1529 ms
+05-04-2026 09:42:04.027 [main] [-] INFO  rideApp-o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-04-2026 09:42:04.055 [main] [-] INFO  rideApp-org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.6.33.Final
+05-04-2026 09:42:04.061 [main] [-] INFO  rideApp-o.h.s.integration.SpatialService.<init> - HHH80000001: hibernate-spatial integration enabled : true
+05-04-2026 09:42:04.080 [main] [-] INFO  rideApp-o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+05-04-2026 09:42:04.142 [main] [-] INFO  rideApp-com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+05-04-2026 09:42:04.228 [main] [-] INFO  rideApp-com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f98ac31
+05-04-2026 09:42:04.229 [main] [-] INFO  rideApp-com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+05-04-2026 09:42:04.288 [main] [-] INFO  rideApp-o.hibernate.orm.connections.pooling.logConnectionInfo - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+05-04-2026 09:42:04.297 [main] [-] INFO  rideApp-org.hibernate.spatial.contributeJdbcTypes - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+05-04-2026 09:42:04.404 [main] [-] INFO  rideApp-o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-04-2026 09:42:04.424 [main] [-] INFO  rideApp-org.hibernate.spatial.contributeJdbcTypes - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+05-04-2026 09:42:04.623 [main] [-] INFO  rideApp-org.hibernate.spatial.contributeFunctions - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+05-04-2026 09:42:04.968 [main] [-] INFO  rideApp-o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-04-2026 09:42:05.233 [main] [-] INFO  rideApp-o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-04-2026 09:42:05.636 [main] [-] WARN  rideApp-o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-04-2026 09:42:05.912 [main] [-] INFO  rideApp-o.s.d.j.r.query.QueryEnhancerFactory.<clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-04-2026 09:42:06.171 [main] [-] INFO  rideApp-o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.configure - Global AuthenticationManager configured with UserDetailsService bean with name userService
+05-04-2026 09:42:06.255 [main] [-] ERROR rideApp-i.n.r.d.DnsServerAddressStreamProviders.<clinit> - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+05-04-2026 09:42:06.625 [main] [-] INFO  rideApp-o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 1 endpoint beneath base path '/actuator'
+05-04-2026 09:42:07.163 [main] [-] INFO  rideApp-o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+05-04-2026 09:42:07.173 [main] [-] INFO  rideApp-o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+05-04-2026 09:42:07.184 [main] [-] INFO  rideApp-c.p.r.rideApp.RideAppApplication.logStarted - Started RideAppApplication in 5.546 seconds (process running for 6.043)
+05-04-2026 09:42:07.188 [main] [-] WARN  rideApp-o.s.c.events.SpringDocAppInitializer.init - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+05-04-2026 09:42:07.189 [main] [-] WARN  rideApp-o.s.c.events.SpringDocAppInitializer.init - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+05-04-2026 10:10:59.758 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m14s382ms).
+05-04-2026 12:14:46.323 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m45s506ms).
+05-04-2026 12:16:01.928 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s546ms).
+05-04-2026 12:17:03.639 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m1s711ms).
+05-04-2026 12:19:54.070 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m20s419ms).
+05-04-2026 12:21:05.393 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m11s319ms).
+05-04-2026 12:24:45.502 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m10s91ms).
+05-04-2026 12:26:02.040 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s518ms).
+05-04-2026 12:28:15.024 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m12s985ms).
+05-04-2026 12:30:15.057 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s177ms).
+05-04-2026 12:31:37.179 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52s109ms).
+05-04-2026 12:33:31.342 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52s94ms).
+05-04-2026 12:39:50.285 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m18s943ms).
+05-04-2026 12:42:01.524 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m41s215ms).
+05-04-2026 12:45:51.579 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m50s55ms).
+05-04-2026 12:47:59.510 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m37s955ms).
+05-04-2026 12:50:58.573 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m57s486ms).
+05-04-2026 12:54:45.698 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m40s740ms).
+05-04-2026 12:58:21.518 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m20s547ms).
+05-04-2026 13:01:33.197 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m11s682ms).
+05-04-2026 13:05:02.208 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m58s440ms).
+05-04-2026 13:08:38.808 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m34s152ms).
+05-04-2026 13:10:40.452 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m1s637ms).
+05-04-2026 13:12:29.150 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m48s706ms).
+05-04-2026 13:14:22.680 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m23s528ms).
+05-04-2026 13:15:29.055 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s374ms).
+05-04-2026 13:18:54.578 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m55s510ms).

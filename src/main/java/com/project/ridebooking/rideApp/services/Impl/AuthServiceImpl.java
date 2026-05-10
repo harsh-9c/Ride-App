@@ -1,5 +1,6 @@
 package com.project.ridebooking.rideApp.services.Impl;
 
+import com.project.ridebooking.rideApp.annotation.Auditable;
 import com.project.ridebooking.rideApp.dto.DriverDto;
 import com.project.ridebooking.rideApp.dto.SignupDto;
 import com.project.ridebooking.rideApp.dto.UserDto;
@@ -54,6 +55,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     @Transactional
+    @Auditable(action = "CREATE", entityType = "USER", description = "User registration")
     public UserDto signup(SignupDto signupDto) {
         User user = userRepository.findByEmail(signupDto.getEmail()).orElse(null);
         if(user != null){

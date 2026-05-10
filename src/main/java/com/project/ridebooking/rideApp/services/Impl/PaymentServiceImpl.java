@@ -1,17 +1,18 @@
-package com.project.ridebooking.rideApp.services;
+package com.project.ridebooking.rideApp.services.Impl;
 
 import com.project.ridebooking.rideApp.entities.Payment;
 import com.project.ridebooking.rideApp.entities.Ride;
 import com.project.ridebooking.rideApp.entities.enums.PaymentStatus;
 import com.project.ridebooking.rideApp.exceptions.ResourceNotFoundException;
 import com.project.ridebooking.rideApp.repositories.PaymentRepository;
+import com.project.ridebooking.rideApp.services.PaymentService;
 import com.project.ridebooking.rideApp.strategies.PaymentStrategyManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PaymentServiceImpl implements PaymentService{
+public class PaymentServiceImpl implements PaymentService {
 
     private final PaymentRepository paymentRepository;
     private final PaymentStrategyManager paymentStrategyManager;

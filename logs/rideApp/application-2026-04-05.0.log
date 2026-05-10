@@ -68,3 +68,11 @@
 05-04-2026 13:14:22.680 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m23s528ms).
 05-04-2026 13:15:29.055 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s374ms).
 05-04-2026 13:18:54.578 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m55s510ms).
+05-04-2026 14:17:42.445 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=22m47s613ms).
+05-04-2026 14:20:22.349 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m9s832ms).
+05-04-2026 14:27:03.286 [HikariPool-1:housekeeper] [-] WARN  rideApp-com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m40s937ms).
+05-04-2026 14:31:06.487 [SpringApplicationShutdownHook] [-] INFO  rideApp-o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+05-04-2026 14:31:06.550 [tomcat-shutdown] [-] INFO  rideApp-o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete
+05-04-2026 14:31:06.961 [SpringApplicationShutdownHook] [-] INFO  rideApp-o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-04-2026 14:31:07.011 [SpringApplicationShutdownHook] [-] INFO  rideApp-com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+05-04-2026 14:31:07.017 [SpringApplicationShutdownHook] [-] INFO  rideApp-com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
